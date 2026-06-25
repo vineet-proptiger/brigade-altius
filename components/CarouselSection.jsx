@@ -49,13 +49,13 @@ const CarouselSection = ({ setIsOpen }) => {
   }
 
   const nextSlide = () => {
-    if (!isTransitioning) return;
+    if (!isTransitioning || index >= numItems + 1 || index <= 0) return;
     setIndex((prev) => prev + 1);
     setUserInteracted(Date.now());
   }
 
   const prevSlide = () => {
-    if (!isTransitioning) return;
+    if (!isTransitioning || index >= numItems + 1 || index <= 0) return;
     setIndex((prev) => prev - 1);
     setUserInteracted(Date.now());
   }
@@ -87,12 +87,12 @@ const CarouselSection = ({ setIsOpen }) => {
   // Re-enable transition after jump
   useEffect(() => {
     if (!isTransitioning) {
-      const raf = requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setIsTransitioning(true);
-        });
-      });
-      return () => cancelAnimationFrame(raf);
+      // Force the browser to render the 'jump' without transition first.
+      // A small timeout ensures the DOM paints before transition is re-enabled.
+      const timer = setTimeout(() => {
+        setIsTransitioning(true);
+      }, 50);
+      return () => clearTimeout(timer);
     }
   }, [isTransitioning]);
 
