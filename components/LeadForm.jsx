@@ -93,7 +93,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
       <button type="submit" disabled={loading}
         className="btn-gold mt-4"
         style={{ padding: '11px 24px', width: '80%', display: 'flex', marginLeft: 'auto', marginRight: 'auto' }}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
           <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
         </svg>
         {loading ? 'Submitting...' : btnText}
