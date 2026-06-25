@@ -10,8 +10,10 @@ export default function QuickChat() {
       <div className="container mx-auto px-1 sm:px-4 md:px-8 max-w-[1200px]">
         {/* Section Header */}
         <div className="px-4" style={{ marginBottom: '40px', textAlign: 'center' }} data-aos="fade-up">
-          <h2 style={{
-            fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
+          <h2 
+            className="text-[14px] sm:text-[16px] md:text-[18px]"
+            style={{
+            fontFamily: F_JOST, fontWeight: '700',
             color: '#684C1B', letterSpacing: '0.05em', textTransform: 'uppercase', margin: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap'
           }}>

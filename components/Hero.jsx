@@ -36,9 +36,9 @@ const Hero = ({ setIsOpen }) => {
           inset: 0;
           background: linear-gradient(
             to right,
-            rgba(0,0,0,0.72) 0%,
-            rgba(0,0,0,0.45) 55%,
-            rgba(0,0,0,0.10) 100%
+            rgba(0,0,0,0.60) 0%,
+            rgba(0,0,0,0.35) 55%,
+            rgba(0,0,0,0.05) 100%
           );
           z-index: 2;
           pointer-events: none;
