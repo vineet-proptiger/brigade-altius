@@ -310,8 +310,8 @@ const Hero = ({ setIsOpen }) => {
         }
       `}} />
 
-      {/* ── Desktop Carousel ── */}
-      <div className="hero-slider-wrapper hidden md:grid">
+      {/* ── Main Carousel (All Devices) ── */}
+      <div className="hero-slider-wrapper grid">
         {slides.map((slide, index) => (
           <div 
             key={index} 
@@ -329,21 +329,6 @@ const Hero = ({ setIsOpen }) => {
             />
           </div>
         ))}
-      </div>
-
-      {/* ── Mobile Static Image ── */}
-      <div className="hero-slider-wrapper grid md:hidden">
-        <div className="slide-layer active" style={{ gridArea: '1 / 1 / 2 / 2' }}>
-          <Image
-            src="/images/hero/smDevice.webp"
-            alt="Brigade Altius Mobile Banner"
-            width={768}
-            height={800}
-            className="hero-image"
-            priority={true}
-            sizes="100vw"
-          />
-        </div>
       </div>
 
       {/* ── Dark overlay for text legibility ── */}
